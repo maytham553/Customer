@@ -1,0 +1,26 @@
+.img{
+    height: 4vh  ;
+
+} 
+
+.button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all .5s;
+    
+}
+
+
+.button:focus {
+    outline: none !important;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+

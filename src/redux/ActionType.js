@@ -1,0 +1,10 @@
+
+  
+  export  const CUSTOMER_DATA_LOADING =   "CUSTOM_DATA_LOADING";
+  export  const CUSTOMER_DATA_FETCHED = "CUSTOMER_DATA_FETCHED";
+  export  const CUSTOMER_DATA_FAILED  = "CUSTOMER_DATA_FAILED";
+  export   const ADD_CUSTOMER =  "ADD_CUSTOMER";
+  export   const  EDIT_CUSTOMER  = "EDIT_CUSTOMER" ;
+  
+
+
