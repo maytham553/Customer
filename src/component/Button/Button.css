@@ -1,8 +1,12 @@
-.img{
-    height: 4vh  ;
+.img_icon{
+    height: 20px ;
 
 } 
 
+.img_add_icon{
+    height: 31px  ;
+
+} 
 .button{
     border: none;
     background-color: rgba(255, 255, 255, 0);

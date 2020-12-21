@@ -1,18 +1,22 @@
 import React from "react";
-import "./Button.css" 
-import { connect } from 'react-redux';
+import "./Button.css";
 
- class Button extends React.Component {
+export default class Button extends React.Component {
   render() {
+
+    
     if (this.props.type === "delete") {
       return (
         <div className="text-center">
           <button
+            onClick={() => {
+              this.props.editCustomer(this.props.customer);
+            }}
             className="button btn-sm "
             data-toggle="modal"
             data-target="#modalDelete"
           >
-             <img className="img" src="icons/delete.png"/>
+            <img alt="edit" className="img_icon" src="icons/delete.png" />
           </button>
         </div>
       );
@@ -27,8 +31,7 @@ import { connect } from 'react-redux';
             data-toggle="modal"
             data-target="#modalAdd"
           >
-             <img className="img" src="icons/plus.png"/>
-
+            <img className="img_add_icon" src="icons/plus.png" alt="add" />
           </button>
         </div>
       );
@@ -38,25 +41,83 @@ import { connect } from 'react-redux';
       return (
         <div className="  text-center buttonEditWrapper">
           <button
+            onClick={() => {
+              this.props.editCustomer(this.props.customer);
+            }}
             className="button btn-sm "
             data-toggle="modal"
             data-target="#modalEdit"
-           
           >
-             <img className="img" src="icons/edit.png"/>
+            <img className="img_icon" src="icons/edit.png" alt="delete" />
           </button>
         </div>
       );
     }
+
+    if (this.props.type === "exit") {
+      return (
+        <button
+          type="button"
+          className="close text-secondary"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      );
+    }
+
+    if (this.props.type === "updateApi") {
+      return (
+        <button
+          className="btn btn-outline-secondary btn-block editInside"
+          data-dismiss="modal"
+          onClick={this.props.updateCustomerApi}
+        >
+          تحديث
+        </button>
+      );
+    }
+
+    if (this.props.type === "addApi") {
+      return (
+        <button
+          className="btn btn-outline-secondary btn-block editInside"
+          data-dismiss="modal"
+          onClick={this.props.addCustomerApi}
+        >
+          أضافة
+        </button>
+      );
+    }
+
+    if (this.props.type === "deleteApi") {
+      return (
+        <button
+          type="button"
+          className="btn btn-danger btnYes className"
+          id="btnYes"
+          data-dismiss="modal"
+          onClick={this.props.deleteCustomerApi}
+        >
+          نعم
+        </button>
+      );
+    }
+
+    if (this.props.type === "cancel") {
+      return (
+        <button
+          type="button"
+          className="btn btn-primary btnNo className"
+          id="btnNo"
+          data-dismiss="modal"
+        >
+          لا
+        </button>
+      );
+    }
+
+
   }
 }
-
-function mapStateToProps(state)  {
-  return(
-        { selectedId:state.selectedId}
-  )
-  
-}
-
-export default connect(mapStateToProps)(Button);
-

@@ -12,6 +12,7 @@ import Store from './redux/Store/Store';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={Store}>
+      {console.log(Store)}
       <App />
     </Provider>
   </React.StrictMode>,
